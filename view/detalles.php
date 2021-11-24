@@ -21,13 +21,17 @@
             <?php
             session_start();
             if (!isset($_SESSION['nombre_user'])) {
-                # code...
+                echo "Rellena el formulario y registrate";
+            }else{
+                echo $_SESSION['nombre_user']. " puedes registrarte clickando el seiguiente botón";
+                ?>
+                <form action="../processes/registro.php" method="post">
+                    <input type="hidden" name="correo" value="<?php echo $_SESSION['correo']?>">
+                    <input type="submit" value="Registrame sisuplau">
+                </form>
+                <?php
             }
-
-
         }
-        
-
     ?>
 </body>
 </html>
