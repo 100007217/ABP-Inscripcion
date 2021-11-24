@@ -39,7 +39,6 @@ CREATE TABLE IF NOT EXISTS `db_abp`.`tbl_usuario` (
   `num_movil_use` CHAR(9) NULL,
   `dni_use` CHAR(9) NULL,
   `correo_use` VARCHAR(45) NOT NULL,
-  `password_use` VARCHAR(45) NOT NULL,
   `tipo_usuario_fk` INT(11) NULL,
   PRIMARY KEY (`id_use`),
   INDEX `fk_tipousuario_usuario_idx` (`tipo_usuario_fk` ASC),
