@@ -7,6 +7,22 @@
     <title>Home</title>
 </head>
 <body>
+    
+    <?php
+        session_start();
+        //$_SESSION['mail']=2;
+        if (!isset($_SESSION['correo'])) {
+            echo "Sesion no iniciada";
+            include "login.php";
+        }else{
+            echo "Bienvenido ".$_SESSION['correo'];
+            ?>
+            <a href="../processes/destroytest.php">
+                <button>Destroy session</button>
+            </a>
+            <?php
+        }
+    ?>
     AQUI HAY MUCHOS PORYECTOS SOLIDARIOS
     @if (Session::get('nombre'))
         <p>{{Session::get('nombre')}}</p>

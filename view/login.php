@@ -9,7 +9,6 @@
 <body>
     <form action="../processes/login.proc.php" method="post">
         <input type="email" name="email" placeholder="Introduce tu correo...">Introduce email
-        <br><input type="password" name="password" placeholder="Introduce tu contraseña...">Introduce contraseña
         <br><input type="submit" value="Entrar">
     </form>
 </body>

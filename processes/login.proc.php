@@ -1,16 +1,15 @@
 <?php
 include '../services/connection.php';
 $mail = $_POST['email'];
-$pass = $_POST['password'];
 
 try {
-    $query = "select correo_usuario,password_usuario from tbl_usuario";
+    $query = "select correo_use from tbl_usuario";
     $usuariosbbdd = $pdo->prepare($query);
     $usuariosbbdd -> execute();
     $login_success=0;
     session_start();
     foreach ($usuariosbbdd as $userbbdd) {
-        if ($userbbdd['correo_usuario']==$mail && $userbbdd['password_usuario']==$pass){
+        if ($userbbdd['correo_use']==$mail){
             $_SESSION['correo']=$mail;
             $login_success=1;
         }
