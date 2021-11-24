@@ -15,16 +15,19 @@
             echo "Sesion no iniciada";
             include "login.php";
         }else{
-            echo "Bienvenido ".$_SESSION['correo'];
+            echo "Bienvenido ".$_SESSION['nombre_user'];
             ?>
             <a href="../processes/destroytest.php">
                 <button>Destroy session</button>
             </a>
-            <?php
+        <?php
         }
-    ?>
-    AQUI HAY MUCHOS PORYECTOS SOLIDARIOS
-    @if (Session::get('nombre'))
-        <p>{{Session::get('nombre')}}</p>
+        ?>
+            <br>
+            <h1>EVENTO 1</h1>
+            <form action="detalles.php" method="get">
+                <input type="hidden" name="id_eve" value="1">
+                <input type="submit" value="Ver detalles">
+            </form>
 </body>
 </html>
