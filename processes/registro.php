@@ -4,28 +4,29 @@ include '../services/connection.php';
         header ("Location: ../view/home.php");
     } else {
         $mail = $_POST['correo'];
-        echo $mail;
+        $evento = $_POST['id_evento'];
 
         try {
-            $query = "select correo_use,nom_use from tbl_usuario";
-            $usuariosbbdd = $pdo->prepare($query);
-            $usuariosbbdd -> execute();
-            $usuario_registrado = 0;
+            //CONSEGUIR DATOS USER
+            $query = "select * from tbl_usuario where correo_use='$mail'";
+            $usuariobbdd = $pdo->prepare($query);
+            $usuariobbdd -> execute();
+            $datosuser=$usuariobbdd->fetchAll(PDO::FETCH_ASSOC);
 
-            foreach ($usuariosbbdd as $userbbdd) {
-                if ($userbbdd['correo_use']==$mail){
-                    $usuario_registrado=1;
-                }
-            }
+            //GENERAR INSERTS
+            $generar_inscripcion = $pdo->prepare("INSERT INTO tbl_eventos_usuarios(id_eve_fk,id_use_fk)
+            VALUES ( ?, ?)");
+            $generar_inscripcion->bindParam(1, $evento);
+            $generar_inscripcion->bindParam(2, $datosuser[0]['id_use']);
 
-            if ($usuario_registrado==1) {
-                header ("Location: ../view/home.php");
-            }else{
-                header ("Location: ../view/login.php");
-            }
-
+            print_r($datosuser[0]['id_use']);
+            echo $evento;
+            
+            $generar_inscripcion->execute();
+            print_r($generar_inscripcion);
+            
         } catch (\Throwable $th) {
-            //throw $th;
+            throw $th;
         }
     }
     

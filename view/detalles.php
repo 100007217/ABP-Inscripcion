@@ -26,6 +26,7 @@
                 echo $_SESSION['nombre_user']. " puedes registrarte clickando el seiguiente botón";
                 ?>
                 <form action="../processes/registro.php" method="post">
+                    <input type="hidden" name="id_evento" value="<?php echo $id_evento?>">
                     <input type="hidden" name="correo" value="<?php echo $_SESSION['correo']?>">
                     <input type="submit" value="Registrame sisuplau">
                 </form>
