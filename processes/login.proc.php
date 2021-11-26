@@ -3,7 +3,7 @@ include '../services/connection.php';
 $mail = $_POST['email'];
 
 try {
-    $query = "select correo_use,nom_use from tbl_usuario";
+    $query = "select correo_use,nom_use,id_use from tbl_usuario";
     $usuariosbbdd = $pdo->prepare($query);
     $usuariosbbdd -> execute();
     $login_success=0;
@@ -12,6 +12,7 @@ try {
         if ($userbbdd['correo_use']==$mail){
             $_SESSION['nombre_user']=$userbbdd['nom_use'];
             $_SESSION['correo']=$mail;
+            $_SESSION['id_use']=$userbbdd['id_use'];
             $login_success=1;
         }
     }

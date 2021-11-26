@@ -18,12 +18,9 @@ include '../services/connection.php';
             VALUES ( ?, ?)");
             $generar_inscripcion->bindParam(1, $evento);
             $generar_inscripcion->bindParam(2, $datosuser[0]['id_use']);
-
-            print_r($datosuser[0]['id_use']);
-            echo $evento;
             
             $generar_inscripcion->execute();
-            print_r($generar_inscripcion);
+            header ("Location: ../view/home.php");
             
         } catch (\Throwable $th) {
             throw $th;

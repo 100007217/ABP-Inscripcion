@@ -22,15 +22,36 @@
             session_start();
             if (!isset($_SESSION['nombre_user'])) {
                 echo "Rellena el formulario y registrate";
-            }else{
-                echo $_SESSION['nombre_user']. " puedes registrarte clickando el seiguiente botón";
                 ?>
-                <form action="../processes/registro.php" method="post">
-                    <input type="hidden" name="id_evento" value="<?php echo $id_evento?>">
-                    <input type="hidden" name="correo" value="<?php echo $_SESSION['correo']?>">
-                    <input type="submit" value="Registrame sisuplau">
+                <form action="formulario.php" method="post">
+                    <br><input type="text" name="nombre">Nombre
+                    <br><input type="text" name="apellido">Apellido
+                    <br><input type="date" name="fecha_nac" id="">Fecha nacimiento
+                    <br><input type="text"> Sexo
                 </form>
                 <?php
+            }else{
+
+                include '../services/connection.php';
+                $ver_disponible = $pdo->prepare("SELECT * FROM tbl_eventos_usuarios where (id_eve_fk=? and id_use_fk=?)");
+                $ver_disponible->bindParam(1, $id_evento);
+                $ver_disponible->bindParam(2, $_SESSION['id_use']);
+                $ver_disponible -> execute();
+                $user=$ver_disponible->fetchAll(PDO::FETCH_ASSOC);
+                
+                if (count($user) == 0) {
+                    echo $_SESSION['nombre_user']. " puedes registrarte clickando el seiguiente botón";
+                    ?>
+                    <form action="../processes/registro.php" method="post">
+                        <input type="hidden" name="id_evento" value="<?php echo $id_evento?>">
+                        <input type="hidden" name="correo" value="<?php echo $_SESSION['correo']?>">
+                        <input type="submit" value="Registrame sisuplau">
+                    </form>
+                <?php
+                } else {
+                    echo "Ya estas registrado";
+                }
+                
             }
         }
     ?>
