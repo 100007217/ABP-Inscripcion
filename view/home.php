@@ -18,7 +18,7 @@
             echo "Bienvenido ".$_SESSION['nombre_user'];
             ?>
             <a href="../processes/destroytest.php">
-                <button>Destroy session</button>
+                <button>Logout</button>
             </a>
         <?php
         }

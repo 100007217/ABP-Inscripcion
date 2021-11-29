@@ -20,7 +20,7 @@ include '../services/connection.php';
             $generar_inscripcion->bindParam(2, $datosuser[0]['id_use']);
             
             $generar_inscripcion->execute();
-            header ("Location: ../view/home.php");
+            //header ("Location: ../view/home.php");
             
         } catch (\Throwable $th) {
             throw $th;

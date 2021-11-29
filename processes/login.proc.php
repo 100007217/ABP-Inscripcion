@@ -19,7 +19,7 @@ try {
     if ($login_success==1) {
         header ("Location: ../view/home.php");
     }else{
-        header ("Location: ../view/login.php");
+        header ("Location: ../view/home.php");
     }
 } catch (\Throwable $th) {
     //throw $th;
