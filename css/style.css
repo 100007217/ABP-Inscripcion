@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+    font-family: "Averta CY", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#section1 {
+    height: auto;
+}
+
+#section2 {
+    height: auto;
+}
+
+body {
+    margin: 0px;
+}
+
+.title {
+    text-align: center;
+    margin-top: 3px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+header {
+    background-image: url("../media/background2.png");
+    width: 100%;
+    height: 100vh;
+    /*height: 1000px;*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* opacity: 0.8; */
+}
+
+
+/* header h1 {
+    position: relative;
+} */
+
+
+/* .centerTitle {
+    width: 500px;
+    height: 150px;
+    background-color: lemonchiffon;
+    /* centrar vertical y horizontalmente */
+
+
+/* position: absolute;
+    top: 40%;
+    left: 50%;
+    margin: -25px 0 0 -250px; */
+
+
+/* aplicar a top y al margen izquierdo un valor negativo para completar el centrado del elemento hijo
+} */
+
+.container {
+    background-color: #FFF5EB;
+    width: 80%;
+    height: auto;
+    float: right;
+    margin-top: 10px;
+    /*Si el div crece hacia abajo, se generará solo*/
+}
+
+.rleft {
+    width: 20%;
+    height: 2000px;
+    background-color: grey;
+    float: left;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.eventcards {
+    margin-top: 20px;
+    margin-left: 18px;
+    background-color: #EBEBFF;
+    width: 23%;
+    height: auto;
+    float: left;
+    padding: 2%;
+    border-radius: 5%;
+    text-align: center;
+}
+
+.slider {
+    width: 60%;
+    margin: auto;
+    /*Centramos el slider*/
+    overflow: hidden;
+    /*Los elementos que salen fuera no se ven*/
+    height: auto;
+}
+
+.slider ul {
+    display: flex;
+    /*Coloca cada imagen al lado de la otra*/
+    padding: 0;
+    width: 400%;
+    /*Dependiendo de cuantas imágens tengas, usa 100% por cada imagen del slider*/
+    animation: animation 15s infinite alternate linear;
+}
+
+.slider li {
+    width: 100%;
+    list-style: none;
+}
+
+.slider img {
+    width: 100%;
+    height: 425px;
+}
+
+@keyframes animation {
+    0% {
+        margin-left: 0;
+    }
+    20% {
+        margin-left: 0;
+    }
+    25% {
+        margin-left: -100%;
+    }
+    45% {
+        margin-left: -100%;
+    }
+    50% {
+        margin-left: -200%;
+    }
+    70% {
+        margin-left: -200%;
+    }
+    75% {
+        margin-left: -300%;
+    }
+    100% {
+        margin-left: -300%;
+    }
+}
