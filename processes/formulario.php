@@ -40,8 +40,6 @@
             $crear_user->bindParam(7, $mail);
             $crear_user->bindParam(8, $tipo_user);
 
-            print_r($crear_user);
-
             $crear_user -> execute(); 
 
             //OBTENER ID _USER RECIEN CREADO
@@ -55,8 +53,16 @@
             $_SESSION['correo']=$mail;
             $_SESSION['id_use']=$datosuser[0]['id_use'];
 
+            //COMPROBAR VIA PHP NO INSTARTAR CUANDO EVENTO ESTA FULL
+            /*
+            $query="SELECT (e.num_max_pers_eve)-(COUNT(eu.id_eve_fk)) AS 'Plazas disponibles',e.num_max_pers_eve FROM tbl_eventos_usuarios eu INNER JOIN tbl_eventos e ON e.id_eve=eu.id_eve_fk WHERE id_eve_fk = ?";
+            $plazas = $pdo->prepare($query);
+            $plazas -> execute();
+            if ($plazas[0]['Plazas disponibles']==$plazas[0]['num_max_pers_eve']) {
+                # code...
+            }
+            */
             //INSERTAR USER CREADO EN EL ID_EVENTO
-            
             $inscribir_user = $pdo->prepare("INSERT INTO tbl_eventos_usuarios(id_eve_fk,id_use_fk)
             VALUES ( ?, ?)");
             
@@ -65,7 +71,7 @@
 
             $inscribir_user -> execute();
 
-            header ("Location: ../view/home.php");
+            //header ("Location: ../view/home.php");
             
         }
         catch (\Throwable $th) {

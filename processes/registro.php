@@ -7,6 +7,7 @@ include '../services/connection.php';
         $evento = $_POST['id_evento'];
 
         try {
+            
             //CONSEGUIR DATOS USER
             $query = "select * from tbl_usuario where correo_use='$mail'";
             $usuariobbdd = $pdo->prepare($query);
