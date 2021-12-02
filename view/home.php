@@ -62,6 +62,19 @@
                     throw $th;
                 }
             ?>
+
+            <a href="../processes/destroytest.php">
+                <button>Logout</button>
+            </a>
+        <?php
+        }
+        ?>
+            <br>
+            <h1>EVENTO 1</h1>
+            <form action="detalles.php" method="get">
+                <input type="hidden" name="id_eve" value="1">
+                <input type="submit" value="Ver detalles">
+            </form>
             <div class="slider" id="section1">
                     <ul>
                         <li><img src="../media/background2.png" alt=""></a></li>
@@ -75,5 +88,6 @@
 <footer>
 
 </footer>
+
 </body>
 </html>
