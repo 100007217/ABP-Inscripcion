@@ -43,21 +43,25 @@
     }
     echo "</table>";
     //Query de eventos
-    $query = "select * from tbl_eventos";
+    $query = "select * from tbl_eventos inner join tbl_barrio on tbl_eventos.barrio_eve_fk=tbl_barrio.id_bar";
             $eventosbbddd = $pdo->prepare($query);
             $eventosbbddd -> execute();
             $eventos=$eventosbbddd->fetchAll(PDO::FETCH_ASSOC);
     //Listado eventos
     ?>
     <h1>EVENTOS
+    
     <table>
+    <tr>
+        <td><a href='../processes/generarform.php'>Generar evento</td>
+    </tr>
         <tr>
             <th>Nombre evento
             <th>Fecha inicio evento
             <th>Fecha final evento
-            <th>Sexo evento
             <th>Numero max personas evento
             <th>Edad minima
+            <th>Barrio
         </tr>
     <?php
     foreach ($eventos as $evento) {
@@ -67,6 +71,7 @@
             echo "<td>".$evento['fecha_fin_eve']."</td>";
             echo "<td>".$evento['num_max_pers_eve']."</td>";
             echo "<td>".$evento['edad_min_eve']."</td>";
+            echo "<td>".$evento['nombre_bar']."</td>";
             echo "<td><a href='../processes/modeventoform.php?id={$evento['id_eve']}'>Modificar evento</td>";
             echo "<td><a href='../processes/deleteevento.php?id={$evento['id_eve']}'>Borrar evento</td>";
         echo "</tr>";

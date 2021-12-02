@@ -24,9 +24,9 @@
         $mail = $_POST['email'];
         $evento = $_POST['evento'];
         $tipo_user= "2";
-
         try {
             //INSERTAR USER EN BBDD
+            $pdo->beginTransaction();
             
             $crear_user = $pdo->prepare("INSERT INTO tbl_usuario(nom_use,apellido_use,fecha_nac_use,sexo_use,num_movil_use,dni_use,correo_use,tipo_usuario_fk)
             VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -71,10 +71,13 @@
 
             $inscribir_user -> execute();
 
-            //header ("Location: ../view/home.php");
-            
+            //ejecutamos transaccion
+            $pdo->commit();
+            header ("Location: ../view/home.php");
         }
         catch (\Throwable $th) {
+            //Hacemos rollback si va mal
+            $pdo->rollback();
             throw $th;
         }
     }

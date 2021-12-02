@@ -7,7 +7,7 @@ include '../services/connection.php';
         $evento = $_POST['id_evento'];
 
         try {
-            
+            $pdo->beginTransaction();
             //CONSEGUIR DATOS USER
             $query = "select * from tbl_usuario where correo_use='$mail'";
             $usuariobbdd = $pdo->prepare($query);
@@ -21,9 +21,11 @@ include '../services/connection.php';
             $generar_inscripcion->bindParam(2, $datosuser[0]['id_use']);
             
             $generar_inscripcion->execute();
-            //header ("Location: ../view/home.php");
+            $pdo->commit();
+            header ("Location: ../view/home.php");
             
         } catch (\Throwable $th) {
+            $pdo->rollback();
             throw $th;
         }
     }
