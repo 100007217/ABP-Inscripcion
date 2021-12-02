@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['correo'])) {
+    echo "Sesion no iniciada";
+}else{
+    echo "Bienvenido ".$_SESSION['nombre_user'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +21,7 @@
         <div class="menu" id="section1">
             <nav>
                 <ul>
-                    <li><a class="opcionesMenu" href="">¿Eres voluntario?</a></li>
+                    <li><a class="opcionesMenu" href="login.php">¿Eres voluntario?</a></li>
                     </li>
                 </ul>
             </nav>
@@ -62,7 +70,21 @@
                     throw $th;
                 }
             ?>
-
+            <?php
+        
+        
+        if (!isset($_SESSION['correo'])) {
+            echo "Sesion no iniciada";
+            include "login.php";
+        }else{
+            echo "Bienvenido ".$_SESSION['nombre_user'];
+            ?>
+            <a href="../processes/destroytest.php">
+                <button>Logout</button>
+            </a>
+        <?php
+        }
+        ?>
             <a href="../processes/destroytest.php">
                 <button>Logout</button>
             </a>
