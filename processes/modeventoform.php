@@ -13,17 +13,14 @@
         } catch (\Throwable $th) {
             throw $th;
         }
-        foreach ($eventos as $evento) {
-            print_r($evento);
-        }
         ?>
         <form action="modevento.php" method="post">
             <input type="hidden" name="id_evento" value="<?php echo $id_evento?>">
-            <br><input type="text" name="nombre">Nombre evento
-            <br><input type="date" name="fecha_ini" value=21-01-03>Fecha incio
-            <br><input type="date" name="fecha_fin">Fecha final
-            <br><input type="number" name="num_max"> Numero maximo personas
-            <br><input type="number" name="edad_min"> Edad minima
+            <br><input type="text" name="nombre" value="<?php echo $eventos[0]['nombre_eve']?>">Nombre evento
+            <br><input type="date" name="fecha_ini" value="<?php echo $eventos[0]['fecha_inicio_eve']?>">Fecha incio
+            <br><input type="date" name="fecha_fin" value="<?php echo $eventos[0]['fecha_fin_eve']?>">Fecha final
+            <br><input type="number" name="num_max" value="<?php echo $eventos[0]['num_max_pers_eve']?>"> Numero maximo personas
+            <br><input type="number" name="edad_min" value="<?php echo $eventos[0]['edad_min_eve']?>"> Edad minima
             <br><input type="submit" value="Enviar">
         </form>
     <?php

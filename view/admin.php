@@ -4,7 +4,11 @@
         header ("Location: ../view/home.php");
     }else{
         echo "Bienvenido ".$_SESSION['nombre_user'];
-    }
+    }?>
+    <a href="../processes/destroytest.php">
+                <button>Logout</button>
+    </a>
+    <?php
     include '../services/connection.php'; 
     //Inicio query users
     $query = "select * from tbl_usuario where tipo_usuario_fk=2";

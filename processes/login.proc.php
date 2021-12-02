@@ -14,13 +14,15 @@ try {
             $_SESSION['correo']=$mail;
             $_SESSION['id_use']=$userbbdd['id_use'];
             $login_success=1;
+            break;
         }
     }
     if ($login_success==1) {
         if ($userbbdd['tipo_usuario_fk']==1) {
+            echo $userbbdd['tipo_usuario_fk'];
             header ("Location: ../view/admin.php");
         }else{
-            
+            echo $userbbdd['tipo_usuario_fk'];
             header ("Location: ../view/home.php");
         }
         
