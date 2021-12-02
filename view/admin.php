@@ -34,8 +34,7 @@
             echo "<td>".$user['num_movil_use']."</td>";
             echo "<td>".$user['dni_use']."</td>";
             echo "<td>".$user['correo_use']."</td>";
-            echo "<td><a href='../processes/moduser.php?id={$user['id_use']}'>Modificar usuario</td>";
-            echo "<td><a href='../processes/deleteuser.php?id={$user['id_use']}'>Borrar usuario</td>";
+            echo "<td><a href='../processes/moduserform.php?id={$user['id_use']}'>Modificar usuario</td>";
         echo "</tr>";
     }
     echo "</table>";
@@ -64,7 +63,7 @@
             echo "<td>".$evento['fecha_fin_eve']."</td>";
             echo "<td>".$evento['num_max_pers_eve']."</td>";
             echo "<td>".$evento['edad_min_eve']."</td>";
-            echo "<td><a href='../processes/modevento.php?id={$evento['id_eve']}'>Modificar evento</td>";
+            echo "<td><a href='../processes/modeventoform.php?id={$evento['id_eve']}'>Modificar evento</td>";
             echo "<td><a href='../processes/deleteevento.php?id={$evento['id_eve']}'>Borrar evento</td>";
         echo "</tr>";
     }
