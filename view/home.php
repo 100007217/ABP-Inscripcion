@@ -1,10 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['correo'])) {
-    echo "Sesion no iniciada";
-}else{
-    echo "Bienvenido ".$_SESSION['nombre_user'];
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,8 +17,16 @@ if (!isset($_SESSION['correo'])) {
         <div class="menu" id="section1">
             <nav>
                 <ul>
-                    <li><a class="opcionesMenu" href="login.php">¿Eres voluntario?</a></li>
-                    </li>
+                    <?php
+                    if (!isset($_SESSION['correo'])) {
+                        echo "<li><a class='opcionesMenu' href='login.php'>¿Eres voluntario?</a></li>";
+                    }else{
+                        echo "<li><a class='opcionesMenu' href='home.php'>Hola ".$_SESSION['nombre_user']."</a></li>";
+                        echo "<li><a class='opcionesMenu' href='../processes/destroytest.php'>Logout</a></li>";
+                        
+                    }
+                    ?>
+                    
                 </ul>
             </nav>
         </div>
@@ -70,24 +74,7 @@ if (!isset($_SESSION['correo'])) {
                     throw $th;
                 }
             ?>
-            <?php
-        
-        
-        if (!isset($_SESSION['correo'])) {
-            echo "Sesion no iniciada";
-            include "login.php";
-        }else{
-            echo "Bienvenido ".$_SESSION['nombre_user'];
-            ?>
-            <a href="../processes/destroytest.php">
-                <button>Logout</button>
-            </a>
-        <?php
-        }
-        ?>
-            <a href="../processes/destroytest.php">
-                <button>Logout</button>
-            </a>
+           
             <div class="slider" id="section1">
                     <ul>
                         <li><img src="../media/background2.png" alt=""></a></li>
