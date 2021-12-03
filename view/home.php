@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['correo'])) {
+    echo "Sesion no iniciada";
+}else{
+    echo "Bienvenido ".$_SESSION['nombre_user'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,8 +20,13 @@
         <div class="menu" id="section1">
             <nav>
                 <ul>
-                    <li><a class="opcionesMenu" href="./home.php">Home</a></li>
-                    <li><a class="opcionesMenu" href="">¿Eres voluntario?</a></li>
+                  <?php 
+                    if (!isset($_SESSION['correo'])) {
+                        echo "<li><a class='opcionesMenu' href='login.php'>¿Eres voluntario?</a></li>";
+                    }else{
+                        echo "<li><a class='opcionesMenu' href='home.php'>Hola ".$_SESSION['nombre_user']."</a></li>";
+                        echo "<li><a class='opcionesMenu' href='../processes/destroytest.php'>Logout</a></li>";
+                  ?>
                 </ul>
             </nav>
         </div>
