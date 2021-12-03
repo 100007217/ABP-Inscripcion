@@ -155,7 +155,7 @@ header {
 
 .rleft {
     width: 20%;
-    height: 2170px;
+    height: 2115px;
     background-color: #E0E0E0;
     float: left;
     margin-top: 10px;
@@ -249,6 +249,7 @@ footer {
 
 .foottitle {
     margin-top: 50px;
+    text-align: left;
 }
 
 .footcol {

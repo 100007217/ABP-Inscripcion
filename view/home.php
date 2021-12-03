@@ -16,7 +16,6 @@ session_start();
         <div class="menu" id="section1">
             <nav>
                 <ul>
-
                     <?php
 
                     if (!isset($_SESSION['correo'])) {
@@ -24,11 +23,8 @@ session_start();
                     }else{
                         echo "<li><a class='opcionesMenu' href='home.php'>Hola ".$_SESSION['nombre_user']."</a></li>";
                         echo "<li><a class='opcionesMenu' href='../processes/destroytest.php'>Logout</a></li>";
-
-                        
                     }
                     ?>
-
                 </ul>
             </nav>
         </div>
@@ -50,7 +46,8 @@ session_start();
                 <h1>ABP</h1>
             </div>
             <div class="toptext">
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                <p>Con los eventos solidarios pretendemos implicar a la sociedad en nuestra causa y además marcar un recuerdo mágico en las personas que asisten. 
+                    Es una extraordinaria herramienta de comunicación tanto interna como externa para comunicar aquello que queremos, y hacerlo de la mejor manera. Como se trata de un evento benéfico determinaremos los métodos de donación, pueden ser en efectivo, con tarjeta, se recaudarán las donaciones con antelación o se realizarán el mismo día del evento. También se deberá buscar a una persona encargada de ocuparse el día del evento. Además siempre existe la posibilidad para las personas que no asistan de hacer su donativo con la Fila Cero, y contribuir así personalmente.</p>
             </div>
             <?php
                 require_once "../services/connection.php";        
@@ -86,8 +83,7 @@ session_start();
 
             <div class="belowtxt">
                 <p>
-                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-                    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+                No podemos llevar a cabo un evento solidario a solas. Por eso contamos con un gran equipo de trabajo y con un grupo de voluntarios que están activos en nuestra plantilla. Después de haber decidido el tipo de evento, hay que tener en cuenta cuántos voluntarios se necesitaran ese día. Para realizar un evento sencillo y pequeño, como una rifa, solo necesitaremos en realidad unos cuantos trabajadores. Sin embargo, para los más grandes, si será necesario más ayuda.
                 </p>
             </div>
 
