@@ -37,7 +37,7 @@ session_start();
                 <img src="../media/ajuntament-barcelona-logo.png" alt="">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5987.206062901622!2d2.1772792693115237!3d41.38270864917479!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x23821e1275bfee57!2sAyuntamiento%20de%20Barcelona!5e0!3m2!1ses!2ses!4v1638462743217!5m2!1ses!2ses" width="280" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </center>
-            </div>
+        </div>
         <div class="row container" id="section2">
             <div class="title">
                 <h1>ABP</h1>
