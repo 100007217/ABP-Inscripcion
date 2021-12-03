@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,14 +16,19 @@ session_start();
         <div class="menu" id="section1">
             <nav>
                 <ul>
-                  <?php 
+
+                    <?php
+
                     if (!isset($_SESSION['correo'])) {
                         echo "<li><a class='opcionesMenu' href='login.php'>¿Eres voluntario?</a></li>";
                     }else{
                         echo "<li><a class='opcionesMenu' href='home.php'>Hola ".$_SESSION['nombre_user']."</a></li>";
                         echo "<li><a class='opcionesMenu' href='../processes/destroytest.php'>Logout</a></li>";
+
+                        
                     }
-                  ?>
+                    ?>
+
                 </ul>
             </nav>
         </div>
@@ -38,7 +44,7 @@ session_start();
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5987.206062901622!2d2.1772792693115237!3d41.38270864917479!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x23821e1275bfee57!2sAyuntamiento%20de%20Barcelona!5e0!3m2!1ses!2ses!4v1638462743217!5m2!1ses!2ses" width="280" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 <p>Para obtener mucha más información de este tipo de proyectos o incluso ir a más de manera voluntaria, puedes acercarte a las ofinas centrales, en este caso nuestro ayuntamiento, en el que se te solucionarán todo tipo de dudas, y incluso fidelizarte con la asociación.</p>
             </center>
-            </div>
+        </div>
         <div class="row container" id="section2">
             <div class="title">
                 <h1>ABP</h1>
@@ -77,12 +83,14 @@ session_start();
                     throw $th;
                 }
             ?>
+
             <div class="belowtxt">
                 <p>
                     Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
                     The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
                 </p>
             </div>
+
             <div class="slider" id="section1">
                     <ul>
                         <li><img src="../media/background2.png" alt=""></li>

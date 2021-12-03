@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  <link rel="stylesheet" href="../css/admin.css">
+  
+
+
+
+
+    <title>Admin</title>
+</head>
+<body>
+<center>
 <?php
     session_start();
     if (!isset($_SESSION['correo'])) {
@@ -17,7 +34,7 @@
             $datosuser=$usuariobbdd->fetchAll(PDO::FETCH_ASSOC);
     //Listado users no admin
     ?>
-    <h1>USUARIOS
+    <h1>USUARIOS</h1>
     <table>
         <tr>
             <th>Nombre user
@@ -27,6 +44,7 @@
             <th>Numero movil user
             <th>DNI user
             <th>Correo user
+            <th>Modificar user
         </tr>
     <?php
     foreach ($datosuser as $user) {
@@ -38,7 +56,7 @@
             echo "<td>".$user['num_movil_use']."</td>";
             echo "<td>".$user['dni_use']."</td>";
             echo "<td>".$user['correo_use']."</td>";
-            echo "<td><a href='../processes/moduserform.php?id={$user['id_use']}'>Modificar usuario</td>";
+            echo "<td class='mod'><a href='../processes/moduserform.php?id={$user['id_use']}'>Modificar usuario</td>";
         echo "</tr>";
     }
     echo "</table>";
@@ -49,11 +67,11 @@
             $eventos=$eventosbbddd->fetchAll(PDO::FETCH_ASSOC);
     //Listado eventos
     ?>
-    <h1>EVENTOS
+    <h1>EVENTOS</h1>
     
     <table>
     <tr>
-        <td><a href='../processes/generarform.php'>Generar evento</td>
+        <td class='gen' colspan="8" align="center" ><a href='../processes/generarform.php'>Generar evento</td>
     </tr>
         <tr>
             <th>Nombre evento
@@ -62,6 +80,8 @@
             <th>Numero max personas evento
             <th>Edad minima
             <th>Barrio
+            <th>Modificar evento
+            <th>Eliminar evento
         </tr>
     <?php
     foreach ($eventos as $evento) {
@@ -72,8 +92,8 @@
             echo "<td>".$evento['num_max_pers_eve']."</td>";
             echo "<td>".$evento['edad_min_eve']."</td>";
             echo "<td>".$evento['nombre_bar']."</td>";
-            echo "<td><a href='../processes/modeventoform.php?id={$evento['id_eve']}'>Modificar evento</td>";
-            echo "<td><a href='../processes/deleteevento.php?id={$evento['id_eve']}'>Borrar evento</td>";
+            echo "<td class='mod'><a href='../processes/modeventoform.php?id={$evento['id_eve']}'>Modificar evento</td>";
+            echo "<td class='del'><a href='../processes/deleteevento.php?id={$evento['id_eve']}'>Borrar evento</td>";
         echo "</tr>";
     }
     echo "</table>";
