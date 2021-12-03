@@ -101,6 +101,11 @@ li {
     margin-top: 3px;
 }
 
+.toptext {
+    padding: 1%;
+    text-align: left;
+}
+
 .row:after {
     content: "";
     display: table;
@@ -150,7 +155,7 @@ header {
 
 .rleft {
     width: 20%;
-    height: 1950px;
+    height: 2170px;
     background-color: #E0E0E0;
     float: left;
     margin-top: 10px;
@@ -231,21 +236,23 @@ header {
     }
 }
 
+.belowtxt {
+    margin-top: 1250px;
+    padding: 1%;
+    text-align: left;
+}
+
 footer {
     background-color: #000000;
     color: white;
 }
 
 .foottitle {
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 .footcol {
     float: left;
     width: 25%;
     padding: 7%;
-}
-
-.footcol img {
-    width: 200px;
 }
