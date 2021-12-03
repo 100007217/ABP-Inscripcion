@@ -19,8 +19,39 @@ body {
     margin: 0px;
 }
 
+#submit {
+    width: 20%;
+    height: 40px;
+    cursor: pointer;
+    padding: 5px;
+    margin: 0 10px 20px 0;
+    margin-top: 550px;
+    background: #5DAAFF;
+    border-radius: 5px;
+    color: white;
+}
+
+#submit:hover {
+    background: #4371A3;
+}
+
+#submit2 {
+    width: 20%;
+    height: 40px;
+    cursor: pointer;
+    padding: 5px;
+    margin: 0 10px 20px 0;
+    background: #5DAAFF;
+    border-radius: 5px;
+    color: white;
+}
+
+#submit2:hover {
+    background: #4371A3;
+}
+
 nav {
-    padding: 50px;
+    padding: 60px;
     background-color: white;
     font-size: 20px;
     /*text-align: right;*/
@@ -68,6 +99,11 @@ li {
 .title {
     text-align: center;
     margin-top: 3px;
+}
+
+.toptext {
+    padding: 1%;
+    text-align: left;
 }
 
 .row:after {
@@ -119,7 +155,7 @@ header {
 
 .rleft {
     width: 20%;
-    height: 2000px;
+    height: 2170px;
     background-color: #E0E0E0;
     float: left;
     margin-top: 10px;
@@ -141,6 +177,7 @@ header {
     padding: 2%;
     border-radius: 5%;
     text-align: center;
+    box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.5);
 }
 
 .slider {
@@ -197,4 +234,25 @@ header {
     100% {
         margin-left: -300%;
     }
+}
+
+.belowtxt {
+    margin-top: 1250px;
+    padding: 1%;
+    text-align: left;
+}
+
+footer {
+    background-color: #000000;
+    color: white;
+}
+
+.foottitle {
+    margin-top: 50px;
+}
+
+.footcol {
+    float: left;
+    width: 25%;
+    padding: 7%;
 }
